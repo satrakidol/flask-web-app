@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form method="post">
+        <label for="title">Add new Employee</label>
+        <br>
+        <input type="number" name="ssn" placeholder="Enter SSN" required="true" value="{% if employee %}{{employee.ssn}}{% endif %}"/>
+        <br>
+        <input type="text" name="first_name" placeholder="Enter first name" required> </input>
+        <br>
+         <input type="text" name="last_name" placeholder="Enter last name" required> </input>
+        <br>
+         <input type="number" name="salary" placeholder="Enter salary"> </input>
+        <br>
+        <select name="department_id">
+        {% for department in departments %}
+            <option value="{{ department.number }}">{{ department.name }}</option>
+        {% endfor %}
+        </select>
+        <button type="submit">Submit</button>
+</form>
+
+
+{% endblock %}

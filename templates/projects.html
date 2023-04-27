@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<table>
+    <caption>Projects</caption>
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Number</th>
+            <th scope="col">Location</th>
+            <th scope="col">Department</th>
+            <th scope="col">Action</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for pro in projects %}
+        <tr>
+            <td style="border: 1px solid black;">{{ pro.name}}</td>
+            <td style="border: 1px solid black;">{{ pro.number}}</td>
+            <td style="border: 1px solid black;">{{ pro.location}}</td>
+            <td style="border: 1px solid black;">{{ pro.department}}</td>
+            <td> <a class="btn btn-primary btn-sm" role="button" href="/projects/edit/{{pro.number}}">edit</a></td>
+            <td>
+               <form action="/projects/delete/{{pro.number}}" method="POST">
+                <input class="btn btn-danger btn-sm" type="submit" value="delete">
+               </form>
+           </td>
+       </tr>
+   {% endfor %}
+   </tbody>
+</table>
+
+<a href="/projects/save">Add Project</a>
+{% endblock%}

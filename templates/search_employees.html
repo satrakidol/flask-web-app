@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="post">
+    <div class="form-group row">
+        <label for="title" class="col-sm-2 col-form-label">Last Name</label>
+        <div class="col-sm-10">
+        <input type="text" name="last_name" class="form-control"
+            placeholder="Enter Employee's last name">
+        </input>
+    </div>
+    </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}

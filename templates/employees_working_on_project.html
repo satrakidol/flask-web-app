@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<table>
+    <p>Employees Working on {{ projects}}</p>
+    <thead>
+        <tr>
+            <th scope="col">SSN</th>
+            <th scope="col">Name</th>
+            <th scope="col">Surname</th>
+    </thead>
+    <tbody>
+    {% for ess in essns_employees %}
+        <tr>
+            <td style="border: 1px solid black;">{{ ess.essn}}</td>
+            <td style="border: 1px solid black;">{{ ess.fname}}</td>
+            <td style="border: 1px solid black;">{{ ess.lname}}</td>
+       </tr>
+   {% endfor %}
+   </tbody>
+</table>
+
+{% endblock%}

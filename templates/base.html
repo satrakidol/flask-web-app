@@ -1,0 +1,30 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}Personnel Management{% endblock %}
+
+{% block navbar %}
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Personnel Management</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/">Home</a></li>
+      <li><a href="/employees">Employees</a></li>
+      <li><a href="/employees/search">Search Employees</a></li>
+      <li><a href="/projects">Projects</a></li>
+      <li><a href="/Works_On">Works_on</a></li>
+      <li><a href="/calculate_working_hours">Calculate Working Hours</a></li>
+    </ul>
+  </div>
+</nav>
+
+{% endblock %}
+
+{% block content %}
+
+<p>&nbsp &nbsp &nbsp Αυτή η εφαρμογή ονομάζεται <i>“Personnel Management”</i> και συλλέγει τα δεδομένα της εταιρείας από μια βάση δεδομένων της oracle. Τα δεδομένα αποτελούνται από τα στοιχεία των εργαζομένων της εταιρείας,των τμημάτων της, των έργων που αυτή έχει αναλάβει, καθώς και από μερικές πληροφορίες σχετικά με το ποιος εργαζόμενος απασχολείται με ποιο έργο και πόσες ώρες έχει εργαστεί σε αυτό. </p>
+<br>
+<p>&nbsp &nbsp &nbsp Με την χρήση της εφαρμογής, η διοίκηση της εταιρείας μπορεί ανά πάσα στιγμή να βλέπει, να καταχωρεί, να επεξεργάζεται και να αναζητά δεδομένα σχετικά με τους εργαζόμενους, τα έργα και τις εργατοώρες, καθώς και να συλλέγει νέες πληροφορίες από λειτουργίες της εφαρμογής που θα την βοηθήσουν στην διαχείριση του προσωπικού της. </p>
+
+{% endblock %}

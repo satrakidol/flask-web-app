@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<table>
+    <caption>Employees</caption>
+    <thead>
+        <tr>
+            <th scope="col">SSN</th>
+            <th scope="col">Name</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Department</th>
+            <th scope="col">Action</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for emp in employees %}
+        <tr>
+            <td style="border: 1px solid black;">{{ emp.ssn }}</td>
+            <td style="border: 1px solid black;">{{ emp.name}}</td>
+            <td style="border: 1px solid black;">{{ emp.surname}}</td>
+            <td style="border: 1px solid black;">{{ emp.salary}}</td>
+            <td style="border: 1px solid black;">{{ emp.department}}</td>
+            <td><a class="btn btn-primary btn-sm" role="button" href="/employees/edit/{{ emp.ssn}}">edit</a></td>
+            <td>
+               <form action="/employees/delete/{{ emp.ssn}}" method="POST">
+                <input class="btn btn-danger btn-sm" type="submit" value="delete">
+               </form>
+           </td>
+       </tr>
+   {% endfor %}
+   </tbody>
+</table>
+
+<a href="/employees/save">Add Employee</a>
+{% endblock%}
+
+
+
+
+
+
+
+
+
+

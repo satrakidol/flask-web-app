@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form method="post">
+        <label for="title">Add or Edit new Project</label>
+        <br>
+        <input type="text" name="pname" placeholder="Enter project name" required="true" value="{% if project %}{{project.name}}{% endif %}"/>
+        <br>
+        <input type="number" name="pnumber" placeholder="Enter project number" required="true" value="{% if project %}{{project.number}}{% endif %}"/>
+        <br>
+         <input type="text" name="plocation" placeholder="Enter location" required="true" value="{% if project %}{{project.location}}{% endif %}"/>
+        <br>
+        <select name="dnum">
+        {% for department in departments %}
+            <option value="{{ department.number }}">{{ department.name }}</option>
+        {% endfor %}
+        </select>
+        <button type="submit">Submit</button>
+</form>
+
+
+{% endblock %}

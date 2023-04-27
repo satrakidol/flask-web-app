@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+
+      <form method="post">
+        <div class="form-group row">
+            <label for="title" class="col-sm-2 col-form-label">Search Project</label>
+            <div class="col-sm-10">
+            <input type="text" name="projects" class="form-control"
+                placeholder="Enter Project">
+            </input>
+        </div>
+        </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+<table>
+    <caption>Works_On</caption>
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Project</th>
+            <th scope="col">Hours</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for wor in works_on %}
+        <tr>
+            <td style="border: 1px solid black;">{{ wor.name}}</td>
+            <td style="border: 1px solid black;">{{ wor.project}}</td>
+            <td style="border: 1px solid black;">{{ wor.hours}}</td>
+        </tr>   
+   {% endfor %}
+   </tbody>
+</table>
+
+{% endblock%}
